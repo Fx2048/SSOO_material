@@ -1,5 +1,5 @@
 # b. Escriba un programa que permita determinar si un número es par o impar 
-´´´´
+```
 
 #include <stdio.h>
 
@@ -20,7 +20,7 @@ int main() {
     return 0; // Código de éxito
 }
 
-´´´´
+```
 ![image](https://github.com/user-attachments/assets/e6cb22db-b790-4cc1-810b-aae04c219ef2)
 
 ![image](https://github.com/user-attachments/assets/8a32fe6a-1102-4d18-ac07-0315e2370da3)
