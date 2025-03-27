@@ -1,5 +1,6 @@
 # Escriba un programa que determine si un número es primo 
 
+````
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
@@ -32,6 +33,13 @@ int main() {
            numero, es_primo(numero) ? "es" : "no es");
 
     return 0;
+
 }
+
+````
+
+![image](https://github.com/user-attachments/assets/9a7f03f8-1840-4fef-9fe1-4f1e0ee9d8ef)
+
+![image](https://github.com/user-attachments/assets/bc421424-2f9a-4ca9-bf47-46c78905b0d3)
 
 
