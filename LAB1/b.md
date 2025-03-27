@@ -1,5 +1,6 @@
 # b. Escriba un programa que permita determinar si un número es par o impar 
 ´´´´
+
 #include <stdio.h>
 
 int main() {
