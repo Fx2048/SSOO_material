@@ -88,4 +88,4 @@ int main() {
 
 
 ##  ✅Validaciones:
-![image](https://github.com/user-attachments/assets/11153fc8-0a1b-4bf8-bda4-3d44745a61d3)
+![image](https://github.com/user-attachments/assets/85020e12-e545-412e-8da6-25c26054088d)
