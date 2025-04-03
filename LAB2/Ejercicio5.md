@@ -1,6 +1,6 @@
 # 🎯Desarrolla un conversor de unidades que permita convertir °C a °F, Meros a Pies y Kg a Libras. El programa debe contar con un menú de opciones, y con sus  respectivas validaciones. 
 ## ✅ [Archivo de código 📱🌐](https://drive.google.com/file/d/1QDd_MgQBB17Oc9Zamn_MC3djq1OnGhbA/view?usp=sharing)
-## ✅Código 🔽 
+## ✅Código: 🔽 
 ````
 # include <stdio.h>
 
@@ -81,7 +81,11 @@ int main() {
 }
 
 ````
-## ✅Resultados
+## ✅Resultados:
 ![image](https://github.com/user-attachments/assets/abdc1b48-4a19-441c-afa2-d850c4f16b2f)
 
 ![image](https://github.com/user-attachments/assets/0a520510-230a-4856-8e40-6a870b6682ad)
+
+
+##  ✅Validaciones:
+![image](https://github.com/user-attachments/assets/11153fc8-0a1b-4bf8-bda4-3d44745a61d3)
