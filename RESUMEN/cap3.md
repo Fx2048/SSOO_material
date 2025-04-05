@@ -34,3 +34,6 @@ Llamadas al sistema: El profesor las describió como un mecanismo que permite a 
 Núcleo o kernel del sistema: Se mencionó como la parte central que controla los recursos, el hardware y el funcionamiento del computador.
 
 El profesor no proporcionó explicaciones detalladas de estos conceptos en el contexto dado, pero los mencionó brevemente al final de la sesión antes del descanso.
+
+
+Después de hablar sobre la abstracción del hardware en Windows, el profesor continuó explicando sobre los puertos de entrada y salida, y cómo se nombran en Windows (por ejemplo, COM1, COM2, LPT1). Luego, el profesor intentó mostrar estos puertos en el Administrador de dispositivos de Windows, pero no pudo encontrarlos en ese momento. La clase terminó explorando diferentes categorías en el Administrador de dispositivos como actos, entradas y salidas de audio, y dispositivos del sistema.
