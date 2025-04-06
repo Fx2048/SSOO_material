@@ -1,4 +1,5 @@
 ```
+// librerías importadaas
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -20,9 +21,13 @@ int main() {
     char opcion;
 
     do {
+        // validar entrada del usuario
         printf("Ingrese un número entero positivo: ");
+        //Mientras el usuario no ingrese un número válido o ingrese un número negativo, sigue pidiéndolo
         while (scanf("%d", &numero) != 1 || numero < 0) {
             printf("Entrada inválida. Ingrese un número entero positivo: ");
+                // Limpia el buffer de entrada (opcional pero útil para evitar bucles infinitos)
+
             while (getchar() != '\n'); // limpiar buffer
         }
 
@@ -32,7 +37,7 @@ int main() {
             printf("%d no es un número primo.\n", numero);
 
         printf("\n¿Desea verificar otro número? (s para sí, cualquier otra tecla para salir): ");
-        getchar(); // consumir salto de línea pendiente
+        getchar(); // consumir salto de línea pendiente el enter
         opcion = getchar();
 
         printf("\n");
