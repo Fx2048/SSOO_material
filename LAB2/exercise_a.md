@@ -1,3 +1,4 @@
+```
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -41,3 +42,4 @@ int main() {
     printf("Programa finalizado.\n");
     return 0;
 }
+```
