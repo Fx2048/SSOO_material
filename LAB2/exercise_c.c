@@ -1,4 +1,4 @@
-````
+// librerías
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,20 +18,21 @@ float multiplicar(float a, float b) {
 float dividir(float a, float b) {
     return b != 0 ? a / b : 0; // Prevención de división por cero
 }
-
+// funcion principal
 int main() {
     int opcion;
     float num1, num2, resultado;
     char continuar;
-
+// bucle do ... while for menu interactivo repetitivo
     do {
+    //opciones
         printf("=== Calculadora ===\n");
         printf("1. Sumar\n");
         printf("2. Restar\n");
         printf("3. Multiplicar\n");
         printf("4. Dividir\n");
         printf("Seleccione una opción (1-4): ");
-
+// El programa pide al usuario que ingrese una opción válida (entre 1 y 4). Si el usuario ingresa algo que no es un número entero o está fuera de ese rango, el programa muestra un mensaje de error y le pide que lo intente nuevamente. Mientras tanto, limpia cualquier entrada incorrecta que se haya quedado en el búfer.
         while (scanf("%d", &opcion) != 1 || opcion < 1 || opcion > 4) {
             printf("Opción inválida. Intente de nuevo (1-4): ");
             while (getchar() != '\n'); // Limpiar buffer
@@ -84,4 +85,4 @@ int main() {
     printf("Programa finalizado.\n");
     return 0;
 }
-````
+
