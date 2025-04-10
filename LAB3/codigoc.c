@@ -1,20 +1,20 @@
-/// Escribe un programa que permita ingresar 2 palabras para luego determinar si son iguales o diferentes
+//Crea una estructura “Empleado” con nombre (vector de char), edad y sueldo.
+//Luego lee los datos de 3 empleados, calcula el sueldo promedio y muestra los
+//nombres de los que ganan más que el promedio.
+
 #include <stdio.h>
+#include <string.h>
+
 int main(){
-    //variables
-    string palabra1, string palabra2;
-    
-    printf("Ingrese la palabra %s: \n" );
-    scanf("%s:  \n", &palabra1);
-    printf("Ingrese la palabra %s: \n" );
-    scanf("%s:  \n", &palabra2);
-    
-    if (palabra1 == palabra2){
-        printf("Son palabras identicas");
+    char pal1[20],pal2[20];
+    printf("Ingrese ambas palabras");
+    scanf("%s, %s", pal1,pal2);
+    if (strcmp(pal1, pal2)==0){
+        printf("Son iguales");
+    } else {
+        printf("son diferentes");
+
+  
     }
-    else:
-        printf("Son diferentes")
-    
-    return 0; 
- }
- 
+    return 0;
+}
