@@ -1,125 +1,114 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
+//definimos las constantes a utilizar en el problema
 #define MAX_ESTUDIANTES 5
-#define MAX_NOMBRE 50
-
-// Estructura para un estudiante
+#define MAX_NOMBRE 30 //longitud de los nombres
+    
+//defino una estructura para el ingreso de los datos del problema
 typedef struct {
     char nombre[MAX_NOMBRE];
     int edad;
     float promedio;
-} Estudiante;
-
-// Array para almacenar los estudiantes
-Estudiante estudiantes[MAX_ESTUDIANTES];
-int cantidadEstudiantes = 0;
-
-// Función para limpiar el búfer de entrada
-void limpiarBuffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-}
-
-// Validación para edad
-int leerEdad() {
-    int edad;
-    while (1) {
-        printf("Edad: ");
-        if (scanf("%d", &edad) != 1 || edad <= 0) {
-            printf("❌ Edad inválida. Intente de nuevo.\n");
-            limpiarBuffer();
-        } else {
-            limpiarBuffer();
-            return edad;
-        }
-    }
-}
-
-// Validación para promedio
-float leerPromedio() {
-    float promedio;
-    while (1) {
-        printf("Promedio (0 - 20): ");
-        if (scanf("%f", &promedio) != 1 || promedio < 0 || promedio > 20) {
-            printf("❌ Promedio inválido. Intente de nuevo.\n");
-            limpiarBuffer();
-        } else {
-            limpiarBuffer();
-            return promedio;
-        }
-    }
-}
-
-// Función para registrar estudiante
-void registrarEstudiante() {
-    if (cantidadEstudiantes >= MAX_ESTUDIANTES) {
-        printf("🚫 Ya se registraron los %d estudiantes.\n", MAX_ESTUDIANTES);
+}Estudiante;
+    
+//Función para el registro de los estudiantes
+void registrarEstudiantes(Estudiante estudiantes[], int *registrados){
+    //Verficiamos si ya se registraron el # máximo de estudiantes
+    if(*registrados>=MAX_ESTUDIANTES){
+        printf("Ya se registro los %d estudiantes.\n", MAX_ESTUDIANTES);
         return;
     }
-
-    Estudiante nuevo;
-    printf("Nombre: ");
-    fgets(nuevo.nombre, MAX_NOMBRE, stdin);
-    nuevo.nombre[strcspn(nuevo.nombre, "\n")] = '\0'; // Eliminar salto de línea
-    nuevo.edad = leerEdad();
-    nuevo.promedio = leerPromedio();
-
-    estudiantes[cantidadEstudiantes++] = nuevo;
-    printf("✅ Estudiante registrado correctamente.\n\n");
+//}
+    
+    //Inicializamos el bucle desde el número actual de los estudiantes registrados hasta el máximo
+    for(int i = *registrados; i < MAX_ESTUDIANTES; i++){
+        printf("\nEstudiante N° %d\n", i+1);
+        
+        //Pedimos el nombre del estudiantes
+        printf("Nombre: ");
+        getchar(); //Limpiar el buffer
+        fgets(estudiantes[i].nombre, MAX_NOMBRE, stdin);
+        
+        //Validamos que la edad sea postiva
+        do{
+          printf("Edad: "); 
+          scanf("%d", &estudiantes[i].edad);
+          if(estudiantes[i].edad<=0){
+            printf("Edad inválida. Ingrese nuevamente.\n");
+          }
+        }while(estudiantes[i].edad<=0);
+        
+        //Validamos que el promedio este en el rango de 0 a 20
+        do{
+          printf("Promedio (0 a 20): "); 
+          scanf("%f", &estudiantes[i].promedio);
+          if(estudiantes[i].promedio<0.0 || estudiantes[i].promedio>20.0){
+            printf("Promedio inválido. Ingrese nuevamente.\n");
+          }
+        }while(estudiantes[i].promedio<0.0 || estudiantes[i].promedio>20.0);
+        
+        //Aumentamos el contador de estudiantes registrados
+        (*registrados)++;
+        printf("Estudiante registrado con éxito.\n");
+    }
 }
-
-// Función para mostrar todos los estudiantes
-void mostrarEstudiantes() {
-    if (cantidadEstudiantes == 0) {
-        printf("⚠️ No hay estudiantes registrados.\n\n");
+    
+//Función para mostrar la lista de estudiantes registrados
+void mostrarEstudiantes(Estudiante estudiantes[], int registrados){
+    //Verficiamos si hay estudiantes registrados
+    if(registrados == 0){
+        printf("No hay estudiantes ingresados.\n");
         return;
     }
-
-    printf("\n📋 Lista de Estudiantes:\n");
-    for (int i = 0; i < cantidadEstudiantes; i++) {
-        printf("%d. Nombre: %s | Edad: %d | Promedio: %.2f\n",
-               i + 1, estudiantes[i].nombre, estudiantes[i].edad, estudiantes[i].promedio);
+        
+    //Mostrando los datos del estudiante registrados
+    printf("\nListado de Estudiantes:\n");
+    for(int i=0; i<registrados; i++){
+        printf("\nEstudiante N° %d\n", i+1);
+        printf("\nNombre: %s\n", estudiantes[i].nombre);
+        printf("\nEdad: %d\n", estudiantes[i].edad);
+        printf("\nPromedio: %.2f\n", estudiantes[i].promedio);
     }
-    printf("\n");
 }
-
-// Menú principal
-void menu() {
+   
+int main() {
+    
+    //Arreglo para almacenar los Estudiantes
+    Estudiante estudiante[MAX_ESTUDIANTES];
+    
+    //Variable para llevar la cuenta de los estudiantes registrados
+    int registrados = 0;
+    
+    //Variable para mostrar la opción del menú
     int opcion;
-    while (1) {
-        printf("====== MENÚ ======\n");
-        printf("1. Registrar estudiante\n");
+    
+    //Realizamos el menú principal del programa
+    do{
+        printf("\n--Registro de Estudiantes--\n");
+        printf("1. Registrar estudiantes\n");
         printf("2. Mostrar estudiantes\n");
         printf("3. Salir\n");
-        printf("Seleccione una opción: ");
-
-        if (scanf("%d", &opcion) != 1) {
-            printf("❌ Entrada inválida. Intente de nuevo.\n\n");
-            limpiarBuffer();
-            continue;
-        }
-
-        limpiarBuffer();
-
-        switch (opcion) {
-            case 1:
-                registrarEstudiante();
+        
+        printf("Ingrese una opción: ");
+        scanf("%d", &opcion);
+        
+        //Procesamos las opciones elegidas por el usuario
+        switch(opcion){
+            case 1: 
+                registrarEstudiantes(estudiante, &registrados);
                 break;
             case 2:
-                mostrarEstudiantes();
+                mostrarEstudiantes(estudiante, registrados);
                 break;
             case 3:
-                printf("👋 ¡Hasta luego!\n");
-                return;
+                printf("Saliendo del programa...\n");
+                break;
             default:
-                printf("❌ Opción no válida. Intente de nuevo.\n\n");
+                printf("Opción Inválida. Intente nuevamente.\n");
         }
-    }
-}
-
-int main() {
-    menu();
-    return 0;
+        
+    }while (opcion != 3);
+    
+    return 0; //fin del programa
 }
