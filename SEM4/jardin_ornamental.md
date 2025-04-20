@@ -2,3 +2,9 @@
 Se realiza un modelo simplificado de la situación, así que no se estudiarán los detalles del hardware utilizado. Aquí es importante notar que los dos torniquetes son objetos que existen y se comportan en paralelo e independientemente: los eventos que generan no tienen un orden predecible.
 
 
+Es decir, que cuando se escriba el software no se sabe en qué momento llegará cada visitante ni qué torniquete utilizará. Se simulará un experimento en el que 20 visitantes ingresan por cada torniquete. Al final de la simulación deberá haber 40 visitantes contados. Una implementación tentativa podría ser la siguiente
+
+
+
+
+# Resolución:
