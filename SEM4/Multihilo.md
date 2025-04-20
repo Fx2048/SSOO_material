@@ -80,4 +80,4 @@ int main() {
 2. **Procesamiento:** Cada trabajador calcula el promedio de su bloque y almacena el resultado.
 3. **Recopilación:** El jefe espera que los trabajadores terminen (`pthread_join`) y luego promedia los resultados para generar el promedio final.
 
-Este enfoque es ideal para tareas que se pueden dividir en subtareas independientes. Si deseas explorar otro modelo como Equipo de Trabajo o Línea de Ensamblado, puedo ayudarte a adaptarlo. 🚀
+Este enfoque es ideal para tareas que se pueden dividir en subtareas independientes.
