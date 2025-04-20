@@ -72,6 +72,7 @@ int main() {
 ```
 
 
+![image](https://github.com/user-attachments/assets/303d5e68-af5c-4d33-9d50-990ef5ef01c8)
 
 
 ### **Explicación del código:**
