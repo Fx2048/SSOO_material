@@ -78,7 +78,6 @@ FinFunción
 # Código
 
 ````
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -98,7 +97,7 @@ int totalPedidos = 0;
 
 // Función para agregar un nuevo pedido
 void agregarPedido() {
-    if (totalPedidos >= MAX_PEDID==
+    if (totalPedidos >= MAX_PEDIDOS) {
         printf("¡No se pueden agregar más pedidos!\n");
         return;
     }
@@ -124,7 +123,7 @@ void agregarPedido() {
 void mostrarPedidos() {
     printf("\n--- Lista de Pedidos ---\n");
 
-    if (totalPedidos == 0) {              // Bandeja vacía
+    if (totalPedidos == 0) {
         printf("No hay pedidos registrados.\n");
         return;
     }
@@ -167,6 +166,7 @@ int main() {
 
     return 0;
 }
+
 
 ````
 
