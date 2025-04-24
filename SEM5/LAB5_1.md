@@ -9,10 +9,10 @@ Definir estructura Pedido:
     producto : cadena de caracteres
     cantidad : entero
 
-Crear arreglo pedidos[MAX_PEDIDOS] de tipo Pedido
+Crear arreglo pedidos[MAX_PEDIDOS] de tipo Pedido // bandeja llena
 Inicializar totalPedidos ← 0
 
-Función agregarPedido:                              #FUNCION DE COCINERO
+Función agregarPedido:
     Si totalPedidos ≥ MAX_PEDIDOS entonces
         Mostrar "¡No se pueden agregar más pedidos!"
         Salir de la función
@@ -52,7 +52,7 @@ Función principal:
         Mostrar menú:
             "=== Sistema de Pedidos ==="
             "1. Agregar Pedido"
-            "2. Mostrar Pedidos"
+            "2. Mostrar Pedidos" // Mesero Función
             "3. Salir"
             "Seleccione una opción: "
         Leer opcion
@@ -75,7 +75,7 @@ FinFunción
 
 ````
 
-#Código
+# Código
 
 ````
 
@@ -98,7 +98,7 @@ int totalPedidos = 0;
 
 // Función para agregar un nuevo pedido
 void agregarPedido() {
-    if (totalPedidos >= MAX_PEDIDOS) {
+    if (totalPedidos >= MAX_PEDID==
         printf("¡No se pueden agregar más pedidos!\n");
         return;
     }
@@ -124,7 +124,7 @@ void agregarPedido() {
 void mostrarPedidos() {
     printf("\n--- Lista de Pedidos ---\n");
 
-    if (totalPedidos == 0) {
+    if (totalPedidos == 0) {              // Bandeja vacía
         printf("No hay pedidos registrados.\n");
         return;
     }
