@@ -12,7 +12,7 @@ Definir estructura Pedido:
 Crear arreglo pedidos[MAX_PEDIDOS] de tipo Pedido
 Inicializar totalPedidos ← 0
 
-Función agregarPedido:
+Función agregarPedido:                              #FUNCION DE COCINERO
     Si totalPedidos ≥ MAX_PEDIDOS entonces
         Mostrar "¡No se pueden agregar más pedidos!"
         Salir de la función
