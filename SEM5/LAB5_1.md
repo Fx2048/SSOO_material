@@ -1,3 +1,5 @@
+````
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -86,3 +88,8 @@ int main() {
 
     return 0;
 }
+
+````
+
+![image](https://github.com/user-attachments/assets/eb07085c-33a4-4383-8465-929e904fd5b8)
+
