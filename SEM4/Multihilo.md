@@ -1,17 +1,27 @@
 # Desarrollar un concepto para una aplicación multihilo utilizando uno de los modelos de ejecución discutidos (Jefe/Trabajador, Equipo de Trabajo, Línea de Ensamblado)
 
 
-# Resolución:
 
-¡Excelente! Vamos a desarrollar un concepto para una aplicación multihilo en C. Elegiré el modelo **Jefe/Trabajador**, ya que este se adapta muy bien a sistemas en los que una tarea principal se divide en subtareas, como lo haría un jefe delegando trabajo a varios trabajadores.
+# 1. **Selección del Modelo:**
+
+# Concepto: Sistema de búsqueda de patrones en grandes conjuntos de datos
+El objetivo es crear una aplicación multihilo en C que realice búsquedas paralelas de patrones específicos dentro de enormes conjuntos de datos. 
+El "jefe" (hilo principal) distribuye bloques de datos entre varios "trabajadores" (hilos secundarios) para realizar operaciones, como calcular el promedio de bloques numéricos.
+
+Elegiré el modelo **Jefe/Trabajador**, ya que este se adapta muy bien a sistemas en los que una tarea principal se divide en subtareas, como lo haría un jefe delegando trabajo a varios trabajadores.
 
 ### **Concepto:**
-Una aplicación que procesa datos de manera paralela. El "jefe" (hilo principal) distribuye bloques de datos entre varios "trabajadores" (hilos secundarios) para realizar operaciones, como calcular el promedio de bloques numéricos.
+
+### 2. **Descripción del Concepto:**
+   Propuse una aplicación que busca patrones específicos en grandes conjuntos de datos. El "jefe" coordina la división de tareas y delega el procesamiento a los "trabajadores," mientras estos procesan sus partes de forma paralela.
 
 ### **Arquitectura:**
 1. El **jefe** asigna tareas a los trabajadores (por ejemplo, dividir datos en partes).
 2. Cada **trabajador** procesa su parte de forma independiente.
 3. El **jefe** recopila los resultados y genera el resultado final.
+
+![image](https://github.com/user-attachments/assets/e8bed946-f742-48d9-beb3-7da2095c7b64)
+
 
 ### **Código en C usando Pthreads**
 
@@ -81,3 +91,17 @@ int main() {
 3. **Recopilación:** El jefe espera que los trabajadores terminen (`pthread_join`) y luego promedia los resultados para generar el promedio final.
 
 Este enfoque es ideal para tareas que se pueden dividir en subtareas independientes.
+
+
+### 3. **Interacción de Hilos:**
+   Detallé cómo el hilo principal (jefe) distribuye bloques de datos y recopila los resultados de los hilos secundarios (trabajadores), y cómo cada trabajador realiza su búsqueda independientemente antes de regresar su resultado. En el código, se observa esta interacción a través de `pthread_create` y `pthread_join`.
+
+### 4. **Beneficios y Ventajas:**
+   - **Escalabilidad:** Es sencillo añadir más hilos para procesar mayores cantidades de datos.
+   - **Simplicidad:** La estructura jefe/trabajador facilita la implementación y el manejo de tareas.
+   - **Eficiencia:** El paralelismo reduce el tiempo necesario para completar las tareas, aprovechando al máximo los recursos disponibles.
+
+### 5. **Creatividad y Originalidad:**
+   Incorporé la idea de buscar patrones en cadenas de texto, lo que no solo tiene aplicaciones prácticas en análisis de datos, sino que también demuestra flexibilidad en el uso del modelo. Además, el concepto permite adaptarse a diferentes escenarios, como búsquedas en bases de datos genómicas, análisis de textos o inspección de logs de software.
+
+
